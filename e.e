@@ -1,11 +1,11 @@
 note
-	description: "Summary description for {D}."
+	description: "Summary description for {E}."
 	author: ""
 	date: "$Date$"
 	revision: "$Revision$"
 
 class
-	D
+	E
 
 create
 	make_with_c
@@ -25,7 +25,7 @@ feature
 	local
 		x : INTEGER
 	do
-		print ("d.f()%N")
+		print ("e.f()%N")
 
 		from
        		x := 0
@@ -35,14 +35,15 @@ feature
     	    x >= 100
     	loop
         	x := x + 1
-        	print( "d " )
+        	print_c_val( c ) -- lock on this call
     	end
 
-		print ("%Nd.f() end %N")
+		print ("%Ne.f() end %N")
 	end
 
 	print_c_val( c_arg : separate C )
 	do
 		print( c_arg.x )
 	end
+
 end
